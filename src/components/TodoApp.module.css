@@ -1,0 +1,127 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-primary);
+  transition: background-color var(--transition-base);
+}
+
+.header {
+  padding: var(--space-6) var(--space-4);
+  text-align: center;
+  background: linear-gradient(
+    180deg,
+    var(--bg-secondary) 0%,
+    var(--bg-primary) 100%
+  );
+  border-bottom: var(--border-soft);
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-2);
+}
+
+.logoIcon {
+  width: 40px;
+  height: 40px;
+  stroke: var(--accent-primary);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+.title {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.main {
+  flex: 1;
+  padding: var(--space-5) var(--space-4);
+  max-width: 640px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.footer {
+  padding: var(--space-5) var(--space-4);
+  text-align: center;
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  border-top: var(--border-soft);
+}
+
+/* Theme toggle button */
+.themeToggle {
+  position: fixed;
+  top: var(--space-4);
+  right: var(--space-4);
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background-color: var(--bg-elevated);
+  border: var(--border-standard);
+  box-shadow: var(--elevation-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+  z-index: 100;
+}
+
+.themeToggle:hover {
+  color: var(--accent-primary);
+  box-shadow: var(--elevation-2);
+  transform: scale(1.05);
+}
+
+.themeToggle:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+.themeIcon {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+/* Mobile adjustments */
+@media (max-width: 640px) {
+  .header {
+    padding: var(--space-5) var(--space-4);
+  }
+
+  .title {
+    font-size: var(--text-xl);
+  }
+
+  .main {
+    padding: var(--space-4);
+  }
+
+  .themeToggle {
+    top: var(--space-3);
+    right: var(--space-3);
+    width: 40px;
+    height: 40px;
+  }
+}

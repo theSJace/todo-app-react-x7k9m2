@@ -1,0 +1,84 @@
+.inputContainer {
+  position: relative;
+  display: flex;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+.inputWrapper {
+  flex: 1;
+  position: relative;
+}
+
+.todoInput {
+  width: 100%;
+  padding: var(--space-4) var(--space-5);
+  font-size: var(--text-base);
+  background-color: var(--bg-elevated);
+  border: var(--border-standard);
+  border-radius: var(--radius-lg);
+  color: var(--text-primary);
+  box-shadow: var(--elevation-1);
+  transition: all var(--transition-fast);
+}
+
+.todoInput:hover {
+  border-color: var(--text-tertiary);
+}
+
+.todoInput:focus {
+  border-color: var(--accent-primary);
+  box-shadow: var(--elevation-2), 0 0 0 3px var(--accent-primary-light);
+}
+
+.addButton {
+  padding: var(--space-4) var(--space-5);
+  font-size: var(--text-base);
+  font-weight: var(--font-medium);
+  background-color: var(--accent-primary);
+  color: var(--text-inverse);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--elevation-1);
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  white-space: nowrap;
+}
+
+.addButton:hover {
+  background-color: var(--accent-primary-hover);
+  box-shadow: var(--elevation-2);
+  transform: translateY(-1px);
+}
+
+.addButton:active {
+  transform: translateY(0);
+  box-shadow: var(--elevation-1);
+}
+
+.addButton:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+.addIcon {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+  .inputContainer {
+    flex-direction: column;
+  }
+
+  .addButton {
+    justify-content: center;
+  }
+}

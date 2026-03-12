@@ -1,0 +1,89 @@
+.todoItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background-color: var(--bg-elevated);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--elevation-1);
+  border: var(--border-soft);
+  transition: all var(--transition-base);
+  animation: slide-in var(--transition-base) ease-out;
+}
+
+.todoItem:hover {
+  box-shadow: var(--elevation-2);
+  transform: translateY(-1px);
+}
+
+.todoItem.completed {
+  opacity: 0.7;
+}
+
+.todoItem.completed .todoText {
+  text-decoration: line-through;
+  color: var(--text-tertiary);
+}
+
+.todoItem.deleting {
+  animation: fade-out var(--transition-fast) ease-out forwards;
+}
+
+.todoText {
+  flex: 1;
+  font-size: var(--text-base);
+  color: var(--text-primary);
+  word-break: break-word;
+  transition: color var(--transition-fast);
+  line-height: var(--leading-relaxed);
+}
+
+.deleteButton {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-tertiary);
+  opacity: 0;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.todoItem:hover .deleteButton {
+  opacity: 1;
+}
+
+.deleteButton:hover {
+  background-color: var(--destructive-light);
+  color: var(--destructive);
+}
+
+.deleteButton:focus-visible {
+  opacity: 1;
+}
+
+.deleteIcon {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+/* Mobile: always show delete button */
+@media (max-width: 640px) {
+  .deleteButton {
+    opacity: 1;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .todoItem {
+    animation: none;
+  }
+}

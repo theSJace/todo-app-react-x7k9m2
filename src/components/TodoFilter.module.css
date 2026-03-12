@@ -1,0 +1,75 @@
+.filterContainer {
+  display: flex;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+  padding: var(--space-2);
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-xl);
+  border: var(--border-soft);
+}
+
+.filterButton {
+  flex: 1;
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--text-secondary);
+  background-color: transparent;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+.filterButton:hover {
+  color: var(--text-primary);
+  background-color: var(--bg-elevated);
+}
+
+.filterButton.active {
+  color: var(--accent-primary);
+  background-color: var(--bg-elevated);
+  box-shadow: var(--elevation-1);
+}
+
+.filterButton:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+.filterCount {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 var(--space-1);
+  margin-left: var(--space-2);
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  color: var(--text-inverse);
+  background-color: var(--text-tertiary);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-fast);
+}
+
+.filterButton.active .filterCount {
+  background-color: var(--accent-primary);
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+  .filterContainer {
+    padding: var(--space-2);
+  }
+
+  .filterButton {
+    padding: var(--space-3);
+    font-size: var(--text-xs);
+  }
+
+  .filterCount {
+    min-width: 16px;
+    height: 16px;
+    font-size: 10px;
+  }
+}
